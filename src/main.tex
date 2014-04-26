@@ -1,7 +1,7 @@
 \documentclass[12pt,a4paper,oneside]{report}             % Single-side
 %\documentclass[11pt,a4paper,twoside,openright]{report}  % Duplex
 
-%\PassOptionsToPackage{chapternumber=Huordinal}{magyar.ldf}
+%\PassOptionsToPackage{chapternumber=Huordinal}{magyar.ldf} %betuvel a fejezetek szama
 \usepackage{t1enc}
 %\usepackage[latin2]{inputenc}
 \usepackage{amsmath}
@@ -23,6 +23,7 @@
 \usepackage{hyperref}
 \usepackage{float} % ezzel lehet helybe rakni az abrat
 \usepackage{listings}
+
 
 
 %--------------------------------------------------------------------------------------
@@ -167,7 +168,7 @@ aboveskip=10pt}
 \include{chapter2}
 \include{chapter3}
 \include{chapter4}
-
+\include{chapter5}
 %\include{chapter6}
 %\include{chapter7}
 \include{aftermatch}
@@ -178,9 +179,9 @@ aboveskip=10pt}
 \listoffigures\addcontentsline{toc}{chapter}{Ábrák jegyzéke}
 \listoftables\addcontentsline{toc}{chapter}{Táblázatok jegyzéke}
 
-%\bibliography{mybib}
+\bibliography{mybib.bib}
 \addcontentsline{toc}{chapter}{Irodalomjegyzék}
-\bibliographystyle{plain}
+\bibliographystyle{ieeetr}
 
 
 

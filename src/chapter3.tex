@@ -1,25 +1,16 @@
 %----------------------------------------------------------------------------
-\chapter{Nvidia CUDA platform ismertetése}
+\chapter{A referenciaként szolgáló program}
 %----------------------------------------------------------------------------
 
-\section{CUDA-val szerelt GPU-k bemutatása}
+\section{A program bemutatása}
 
 
-\section{Architektúra és programozása}
+\subsection{Detektálási algoritmus}
+
+\subsection{Mennyiségek származtatása}
 
 
-
-\section{Mintaprogram: Két vektor összegzése blokkok és szálak használatával}
-
-Az eszközön futó kód:
-\begin{lstlisting}[frame=single]  % Start your code-block
-
-// Az eszkozon futo mag.
-__global__ void add(int *a, int *b, int *c) {
-    int index = threadIdx.x + blockIdx.x * blockDim.x;
-    c[index] = a[index] + b[index];
-}
-\end{lstlisting}
+\section{Implementáció során hozott döntése}
 
 
 
