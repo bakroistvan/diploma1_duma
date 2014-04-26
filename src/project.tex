@@ -7,25 +7,52 @@
 \textbf{FELADATKIÍRÁS}\\
 \end{center}
 
-\noindent A GPU kártyák teljesítményének növekedése magas potenciált jelent a 
-szimulátorok készítésében.
-Ezzel egyetemben más programozási metodika is kívánkozik hozzá.\\
+A modern alacsony hőmérsékletű plazmafizikai kísérletek egy új, érdekes és izgalmas területe a poros plazmák
+kutatása. Egy elektromos gázkisülésbe helyezett apró (mikrométer méretű) szilárd szemcse a kisülési plazma
+atomi részecskéivel kölcsönhatva elektromosan feltöltődik. A sok töltött szemcséből kialakuló elrendezésben a
+szilárdtestfizikai jelenségek széles spektruma figyelhető meg, pl. kristályrács kialakulása, fázisátalakulás,
+diszlokációk dinamikája, transzport folyamatok, stb. Poros plazmákat jelenleg leginkább alapkutatásokban
+alkalmaznak, de jelentőségük az elektronikai gyártásban, fúziós reaktorok üzemeltelésében, Teraherz
+technológiában egyre inkább előtérbe kerül.
 
-\noindent A hallgató feladatának a következõkre kell kiterjednie:
+A kísérleti adadtgyűjtés és feldolgozás nagyrésze részecske-követő velocimetrián (particle tracking velocimetry)
+alapul, vagyis első lépésben egy nagysebességű kamera segítségével nagyfelbontású képek készülnek, amely
+képek segítségével a porszemcsék pontos (a kamera felbontásánál pontosabb) koordinátáit kell meghatározni. A
+képek elemzése ezidáig csak a mérést követően, hosszú idő alatt volt megvalósítható a vizsgálandó nagy
+adatmennyiség miatt. A multiprocesszoros környezetek segítségével a feldolgozás gyorsítása lehetséges akár
+több nagyságrenddel is.
+
+A jelölt feladata, hogy a meglévő kísérleti elrendezés, amely az MTA Wigner Fizikai Kutatóközpont
+Szilárdtestfizikai és Optikai Intézezetben található, kiegészítésével a mérés közbeni feldolgozással a mérést
+segítő analízist hajtson végre. Ennek eredményével a mérés előkészítése és elvégzése lényegesen gyorsulhatnak.
+
+A jelölt feladata
+
 \begin{itemize}
-\item Válasszon egy problémát szimulálásra és mutassa be a modelljét
-\item Mutassa be a CUDA számítási platformját és a programozási metodikáját
-\item Készítsen szimulációs programot MATLAB és CUDA platformon
-\item Vizsgálja meg a kettő számítási teljesítményét és számítási pontosságát
-\item Adjon iránymutatást a szimulátor további fejlesztési irányához!
+	\item Mutassa be a mérési elrendezést és elemezze a kapott adatokat! (Mutassa
+	be a mérést!)
+	\item Elemezze a lehetséges multiprocesszoros környezeteket, a feladat
+	szempontjából lényeges paraméterek és feladatvégrehajtási elvárások szempontjából!
+	\item Készítsen programot, amely az azonnali (valós idejű) analízisben résztvevő paramétereket számítja ki, a
+	multiprocesszoros környezet kihasználása nélkül!
+	\item Készítsen programot, amely a mérési környezetbe illeszkedve a mérésnél
+	valós időben képes a vizsgált paraméterek megjelenítésére! Mutassa be és
+	elemezze az elkészített programot!
+	\item Hasonlítsa össze a multiprocesszoros és a nem-multiprocesszoros
+	környezetre elkészített programokat erőforrás igény illetve egyéb paraméterek szempontjából!
+
 \end{itemize}
 
 \begin{flushleft}
 \vspace*{1cm}
-\textbf{Tanszéki konzulens}: Reichardt András, egy. tanársegéd
+\textbf{Tanszéki konzulens}: Reichardt András, egy. tanársegéd\\
+\textbf{Külső konzulens}: Hartmann Péter, PhD., tud. főmunkatárs (MTA Wigner FK,
+SZFI)
 \end{flushleft}
+
+
 
 \begin{flushleft}
 \vspace*{1cm}
-Budapest, 2013. szeptember 9.
+Budapest, 2014.03.10.
 \end{flushleft}

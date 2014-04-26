@@ -4,64 +4,10 @@
 \section{A Poisson egyenlet}
 %----------------------------------------------------------------------------
 
-A Poisson egyenlet egy elliptikus parciális differenciál egyenlet.
-Az elektrosztatika, a mechanika, hővezetés és a fizika sok problémája erre az egyenletre vezet.\\
-Általános alakja, ahol $\varphi$ és $f$ valós vagy komplex értékű vektorfüggvények:
-\begin{align}
-\nabla^2 \varphi &= f\\
-\left( \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2} \right)\varphi(x,y,z) &= f(x,y,z).
-\end{align}
-$f = 0$ esetén a Laplace egyenletre redukálódik.
-Általánosan elmondható, hogy a megoldást $\varphi$ nem kívánjuk tudni a teljes téren, csupán
-egy jól meghatározótt tartományon belül ($\Omega \in \mathbb{R}$).
-A differenciálegyenlet egyértelmű megoldásához a következő peremfeltételek érvényre juttatására van szükség:
-\begin{itemize}
-\item Dirichlet: $\varphi(x,y,z) = f_0(x,y,z) \quad (x,y,z) \in \partial\Omega$
-\item Neumann $\frac{\partial\varphi}{\partial n}(x,y,z) = g_0(x,y,z) \quad (x,y,z) \in \partial\Omega$
-\item stb.
-\end{itemize}
-Az így összeállt probléma már megoldható.
-Megoldani szeparálással és más analitikus módszerrel illetve a következő numerikus módszerekkel lehetséges:
-\begin{itemize}
-\item Véges elemek
-\item Véges differenciák ( ha a megoldás feltehetően elég sima )
-\end{itemize}
-\newpage
 
 %----------------------------------------------------------------------------
 \section{Az elektrosztatikus probléma}
 %----------------------------------------------------------------------------
-A dolgozat során az elektrosztatikus téret leíró, Poisson (Laplace) egyenletre
-redukálódó egyenlet megoldását keresem.
-Ismeretes, hogy ilyenkor áram nem folyik és a gerjesztő menniységek állandóak, 
-azaz $\vec{J} = 0$ és $\frac{\partial}{\partial t} \equiv 0$. Ezen feltételekkel a Maxwell-egyenletek a következő alakot veszik fel:
-\begin{align}
-rot \vec{E} &= 0\\
-div \vec{D} &= \rho\\
-D &= \varepsilon \vec{E}
-\end{align}
-Az örvénymentes villamos tér felírhatő skalárpotenciál gradienseként:
-\begin{equation}
-\vec{E} = - grad \varphi
-\end{equation}
-Ezzel a lépéssel jutunk az elektrosztatika Poisson egyenletére:
-\begin{align}
--div(\varepsilon grad \varphi ) &= \rho
-\end{align}
-Ha homogén az anyag akkor:
-\begin{align}
-	\nabla^2\varphi  &= \frac{\rho}{\varepsilon}
-\end{align}
-
-
-
-
-
-
-
-
-
-
 
 
 
