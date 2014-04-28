@@ -24,7 +24,7 @@
 \usepackage{float} % ezzel lehet helybe rakni az abrat
 \usepackage{listings}
 
-
+\usepackage{subfig}
 
 %--------------------------------------------------------------------------------------
 % Main variables
@@ -118,24 +118,6 @@
 
 \author{\vikszerzo}
 \title{\viktitle}
-\includeonly{
-	%guideline,%
-	project,%
-	titlepage,%
-	%declaration,%
-	abstract,%
-	introduction,%
-	chapter1,%
-	chapter2,%
-	chapter3,%
-	chapter4,%
-	chapter5,%
-	chapter6,%
-	chapter7,%
-	aftermatch
-	%acknowledgement,%
-	%appendices,%
-}
 %--------------------------------------------------------------------------------------
 %	Setup captions
 %--------------------------------------------------------------------------------------
@@ -164,11 +146,11 @@ aboveskip=10pt}
 \include{project}
 \include{abstract}
 %\include{introduction}
-\include{chapter1}
-\include{chapter2}
-\include{chapter3}
-\include{chapter4}
-\include{chapter5}
+\include{meres}
+\include{referencia}
+\include{opencl}
+\include{parallel}
+\include{hasonlit}
 %\include{chapter6}
 %\include{chapter7}
 \include{aftermatch}
