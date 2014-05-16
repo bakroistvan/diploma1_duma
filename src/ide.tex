@@ -1,8 +1,7 @@
 %----------------------------------------------------------------------------
-\chapter{Multiprocesszoros program}
+\chapter{Fejlesztőkörnyezet összeállítása}
 %----------------------------------------------------------------------------
 
-\section{Fejlesztőkörnyezet összeállítása}
 	OpenCL kód fejlesztése történhet Windows alatt NVIDIA Nsight Visual Studio
 	Edition \cite{nsight} és Linux alatt GCC-vel \cite{gcc}.
 	Az Open Source fejlesztőrendszer ingyenessége és az általa generált program hordozhatósága végett
@@ -14,8 +13,8 @@
 	A Linux diszrók közül a CentOS-re \cite{centos} esett a választás, ami 
 	csupán a fejlesztőkörnyezet egyszerűbb telepítése végett történt így.
 
-\subsection{Software Developement Kit-ek (SDK) telepítése} \label{sect:sdk}
-\subsubsection{nVidia támogatás telepítése}
+\section{Software Developement Kit-ek (SDK) telepítése} \label{sect:sdk}
+\subsection{nVidia támogatás telepítése}
 	A legtöbb mai Linux disztrók tartalmaznak drivert az nVidia videó kártyákhoz.
 	Ez az open source Nouveau, ami még nem támogatja az OpenCL-t.
 	Így a hivatalos nVidia drivert fel kell telepítenünk.
@@ -83,7 +82,7 @@
 	Ezután nagyobb problémák esetén már nem fogja lefagyasztani a rendszert a
 	watchdog.
 
-\subsubsection{Intel támogatás telepítése}
+\subsection{Intel támogatás telepítése}
 	A következő oldalról letölthetjük az SDK-t \cite{intel-sdk}.
 	A kicsomagolás után az \texttt{./install-cpu.sh} program futtatásával
 	telepíthető.
@@ -101,7 +100,7 @@
 
 
 \section{Új (Hello World) projekt létrehozása}
-	Az OpenCL fejlesztését konyhanyelven bemutató OpenCL Programming Guide \cite{openclbook}
+	Az OpenCL fejlesztését konyhanyelven bemutató OpenCL Programming Guide \cite{Munshi2011}
 	könyvben szereplő Hello World programot a következő linken lehet letölteni
 	\cite{hellow}.
 	A kód fordítása elött egy Eclipse projektet létrehozunk és a

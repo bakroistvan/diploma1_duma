@@ -1,0 +1,170 @@
+% This file was created with JabRef 2.6.
+% Encoding: UTF8
+
+@MISC{opencl,
+  author = {The Khronos OpenCL Working Group},
+  title = {OpenCL - The open standard for parallel programming of heterogeneous
+	systems.},
+  howpublished = {\url{http://www.khronos.org/opencl}},
+  year = {2014}
+}
+
+@ARTICLE{HartmannP2013,
+  author = {Hartmann P, Donkó I, Donkó Z},
+  title = {Single exposure three-dimensional imaging of dusty plasma clusters},
+  journal = {Rev. Sci. Instrum.},
+  year = {2013},
+  volume = {84},
+  pages = {023501},
+  file = {HartmannP2013.pdf:HartmannP2013.pdf:PDF},
+  numpages = {1-5},
+  url = {http://arxiv.org/abs/1212.1415}
+}
+
+@ARTICLE{Hartmann2013,
+  author = {Hartmann, Peter and Donk\'o, Zolt\'an and Ott, Torben and K\"ahlert,
+	Hanno and Bonitz, Michael},
+  title = {Magnetoplasmons in Rotating Dusty Plasmas},
+  journal = {Phys. Rev. Lett.},
+  year = {2013},
+  volume = {111},
+  pages = {155002},
+  month = {Oct},
+  doi = {10.1103/PhysRevLett.111.155002},
+  file = {Hartmann2013.pdf:Hartmann2013.pdf:PDF},
+  issue = {15},
+  numpages = {5},
+  publisher = {American Physical Society},
+  url = {http://link.aps.org/doi/10.1103/PhysRevLett.111.155002}
+}
+
+@ARTICLE{Hartmann2010,
+  author = {Hartmann, Peter and Douglass, Angela and Reyes, Jorge C. and Matthews,
+	Lorin S. and Hyde, Truell W. and Kov\'acs, Anik\'o and Donk\'o, Zolt\'an},
+  title = {Crystallization Dynamics of a Single Layer Complex Plasma},
+  journal = {Phys. Rev. Lett.},
+  year = {2010},
+  volume = {105},
+  pages = {115004},
+  month = {Sep},
+  doi = {10.1103/PhysRevLett.105.115004},
+  file = {Hartmann2010.pdf:Hartmann2010.pdf:PDF},
+  issue = {11},
+  numpages = {4},
+  publisher = {American Physical Society},
+  url = {http://link.aps.org/doi/10.1103/PhysRevLett.105.115004}
+}
+
+@ARTICLE{Hartmann2011,
+  author = {Hartmann, Peter and S\'andor, M\'at\'e Csaba and Kov\'acs, Anik\'o
+	and Donk\'o, Zolt\'an},
+  title = {Static and dynamic shear viscosity of a single-layer complex plasma},
+  journal = {Phys. Rev. E},
+  year = {2011},
+  volume = {84},
+  pages = {016404},
+  month = {Jul},
+  doi = {10.1103/PhysRevE.84.016404},
+  file = {Hartmann2011.pdf:Hartmann2011.pdf:PDF},
+  issue = {1},
+  numpages = {6},
+  publisher = {American Physical Society},
+  url = {http://link.aps.org/doi/10.1103/PhysRevE.84.016404}
+}
+
+@MISC{phi,
+  author = {Intel},
+  title = {Intel® Xeon Phi™ Product Family},
+  howpublished = {\url{http://www.intel.com/content/www/us/en/processors/xeon/xeon-phi-detail.html}}
+}
+
+@ARTICLE{Merlino2006,
+  author = {Merlino, Robert L},
+  title = {Dusty plasmas and applications in space and industry},
+  journal = {Plasma Physics Applied},
+  year = {2006},
+  volume = {81},
+  pages = {73--110},
+  file = {Merlino2006.pdf:Merlino2006.pdf:PDF}
+}
+
+@BOOK{Munshi2011,
+  title = {OpenCL Programming Guide},
+  publisher = {Addison-Wesley},
+  year = {2011},
+  author = {Munshi, Aaftab},
+  file = {Munshi2011.pdf:Munshi2011.pdf:PDF},
+  isbn = {9780321749642}
+}
+
+@PROCEEDINGS{Oxtoby2010,
+  title = {Tracking interacting dust: comparison of tracking and state estimation
+	techniques for dusty plasmas},
+  year = {2010},
+  volume = {7698},
+  abstract = {When tracking a target particle that is interacting with nearest neighbors
+	in a known way, positional data of the neighbors can be used to improve
+	the state estimate. Effects of the accuracy of such positional data
+	on the target track accuracy are investigated in this paper, in the
+	context of dusty plasmas. In kinematic simulations, notable improvement
+	in the target track accuracy was found when including all nearest
+	neighbors in the state estimation filter and tracking algorithm,
+	whereas the track accuracy was not significantly improved by higher-accuracy
+	measurement techniques. The state estimation algorithm, involving
+	an extended Kalman filter, was shown to either remove or significantly
+	reduce errors due to "pixel-locking". For the purposes of determining
+	the precise particle locations, it is concluded that the simplified
+	state estimation algorithm can be a viable alternative to using more
+	computationally-intensive measurement techniques.},
+  author = {Oxtoby, Neil P. and Ralph, Jason F. and Samsonov, Dmitry and Durniak,
+	Céline},
+  doi = {10.1117/12.852421},
+  file = {Oxtoby2010.pdf:Oxtoby2010.pdf:PDF},
+  journal = {Proc. SPIE},
+  pages = {76980C-76980C-11},
+  url = { http://dx.doi.org/10.1117/12.852421}
+}
+
+@MISC{centos,
+  title = {CentOS Project},
+  howpublished = {http://www.centos.org/}
+}
+
+@MISC{eclipse,
+  title = {Eclipse - The Eclipse Foundation open source community website.},
+  howpublished = {\url{https://www.eclipse.org}}
+}
+
+@MISC{gcc,
+  title = {GCC, the GNU Compiler Collection - GNU Project - Free Software Foundation
+	(FSF)},
+  howpublished = {\url{http://gcc.gnu.org/}}
+}
+
+@MISC{hellow,
+  title = {OpenCL Programming Guide - examples},
+  howpublished = {\url{https://code.google.com/p/opencl-book-samples/source/checkout}}
+}
+
+@MISC{intel-sdk,
+  title = {INTEL OpenCL SDK},
+  howpublished = {\url{https://software.intel.com/en-us/vcsource/tools/opencl-sdk-xe}}
+}
+
+@MISC{mic,
+  title = {Intel® Many Integrated Core Architecture (Intel® MIC Architecture)},
+  howpublished = {\url{http://www.intel.com/content/www/us/en/architecture-and-technology/many-integrated-core/intel-many-integrated-core-architecture.html}}
+}
+
+@MISC{nsight,
+  title = {NVIDIA Nsight Visual Studio Edition},
+  howpublished = {\url{https://developer.nvidia.com/nvidia-nsight-visual-studio-edition}}
+}
+
+@MISC{nvidia-driver,
+  title = {NVIDIA drivers},
+  howpublished = {\url{http://www.nvidia.com/Download/index.aspx}}
+}
+
+@comment{jabref-meta: fileDirectory:../article/;}
+
