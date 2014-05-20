@@ -34,10 +34,10 @@
 		\item \emph{Chipen belüli memória (cache):} Local memory,
 		\item \emph{Chipen kívüli memória:} Global memory és Constant Memory.
 	\end{itemize}
-	A regiszterek és lokális memória kis méretűnek és gyors elérésűnek modható, míg
-	a globális memória nagynak de lassú elérésűnek.
+	A regiszterek és lokális memória kis méretűnek és gyors elérésűnek mondható, míg
+	a globális memória nagynak, de lassú elérésűnek.
 	A memóriákra megkötésként szolgál, hogy ki allokálhat, írhat és olvashat
-	belőle. A \ref{table:mem} táblázatban látható ezen jogosultságok.
+	belőle. A \ref{table:mem}. táblázatban látható ezen jogosultságok.
 	\begin{table}[!h]
 	%\renewcommand{\arraystretch}{1.3}
 	% if using array.sty, it might be a good idea to tweak the value of
@@ -59,11 +59,11 @@
 	Ahhoz, hogy a rendszerben rejlő teljesítményt kihozzuk három fontos kérdést
 	kell a szimulátor magjának implementálásakor megválaszolnunk:
 	\begin{itemize}
-		\item \emph{Mennyit?}: Tisztában kell lennünk az aktuális
+		\item \emph{Mennyit?} Tisztában kell lennünk az aktuális
 		memória fogyasztással és a szükséges memóriamérettel.
-		\item \emph{Honnan-hova?}: Fontos, hogy a lehető legközelebb legyen az adat
+		\item \emph{Honnan-hova?} Fontos, hogy a lehető legközelebb legyen az adat
 		a processzor-maghoz.
-		\item \emph{Mikor?}: Mivel a memória művelet alatt a futtatott kernel nem
+		\item \emph{Mikor?} Mivel a memória művelet alatt a futtatott kernel nem
 		dolgozik, így átadja a helyét egy másiknak. (Ez Direct Memory Access (DMA)
 		blokk létezése allatt igaz). Ennek a megfelelő szinkronizációjával nagyobb
 		kihasználtság érhető el (load balance).
@@ -73,10 +73,10 @@
 \section{OpenCL programozási modell}
 	
 	A programozási modell középpontjában a kontextus áll, ami az OpenCL
-	osztálydiagrammján (\ref{fig:class} ábra) figyelhető meg.
+	osztálydiagrammján (\ref{fig:class}. ábra) figyelhető meg.
 	A futtatáshoz szükséges, hogy a kontextushoz platformot, majd azon belül
 	eszközt, az eszközhöz programot (kernelt) és memóriát rendeljünk.
-	\begin{figure}[!h]
+	\begin{figure}[!ht]
 		\centering
 		\includegraphics[width=0.6\columnwidth]{figures/eps/context.eps}
 		\caption{OpenCL context osztálydiagrammja (forrás: \cite{opencl})} 
@@ -89,14 +89,16 @@
 	A programozással megoldandó problémát kétféleképpen lehetséges a feldolgozó
 	egységekhez (work-item) avagy processzorokhoz rendelni:
 	adat parallel módon vagy taszk parallel módon.
+	
 	Adat parallel módon (\ref{fig:data_parallel} ábra) a feldolgozandó adat egy
-	egységéhez rendelünk egy feldolgozó egységet. Fontos figyelembe venni az eszköz korlátos
+	részéhez rendelünk egy feldolgozó egységet. Fontos figyelembe venni az eszköz korlátos
 	számú feldolgozó egységének számát. Ha nem elég a feldolgozó egysége akkor a
 	feladat megfelelő partícionálásával lehetséges kordában tartani a szükséges
 	erőforrás számát.
+	
 	Taszk parallel módot (\ref{fig:task_parallel} ábra) olyan esetben célszerű
 	használna, ha a bemenet dinamikus mérete a futási időben rendkívül változik
-	illetve a végrehajtandó feladat lezán függenek össze.
+	illetve a végrehajtandó feladat lazán függenek össze.
 	
 	\begin{figure*}[!ht]
 		\centering
@@ -113,11 +115,11 @@
 		\label{fig:parallel}
 	\end{figure*}
 	A processzor-magok megfelelő kihasználtságának elérése végett több ezer
-	work-item virtuális osztozik rajta.
+	work-item virtuálisan osztozik rajta.
 	Továbbá ezen work-item-eket work-group-okba rendezzük.
 	
-	A work-itemeket jelen pillanatban az OpenCL specifikációja szerint 3 dimenziós work-group-ba tudjuk
-	rendezni. Egy példát láthatunk egy work-item indexének a globális és lokális megfelelőjére a
+	A work-itemeket jelen pillanatban az OpenCL specifikációja \cite{opencl} szerint 3 dimenziós
+	work-group-ba tudjuk rendezni. Egy példát láthatunk egy work-item indexének a globális és lokális megfelelőjére a
 	követekző \ref{fig:ndrange}. ábrán.
 	
 	\begin{figure}[!h]
@@ -128,7 +130,7 @@
 	\end{figure}
 
 	A work-group-okba rendezés a lokális memória jogusultsága miatt érdekes.
-	Konkrétan egy work-group-ba tartozó összes work-item azonos lokális memórián
+	Konkrétan az egy work-group-ba tartozó összes work-item azonos lokális memórián
 	osztozik.
 	Ennek a következménye az, hogy adat parallel módú feldolgozás esetén
 	az egymásra ható adatokhoz tartozó work-item-eket egy work groupba kell
@@ -136,7 +138,7 @@
 	Ha ez nem lehetséges, akkor a globális memóriához kell fordulnunk.
 	A globális memória avagy a bank szervezésű külső (off-chip) memóriák
 	hozzáférési ideje relatíve nagy így ezek használatát lehetőleg el kell kerülni
-	és a programozónak kell ``cahchelni" a lokális memóriába.
+	és a programozónak kell ``cachelni" a lokális memóriába.
 	
 	Mivel a work-item-ek konkurrensen hajtódnak végre, így az általuk közösen elérhető memóriákra
 	(globális, lokális) nézve versenyhelyzetben vannak.
@@ -147,8 +149,8 @@
 	work-group-on belül történik, a work-group-ok közötti szinkronizációra nincs lehetőség. 
 	
 	\begin{center}
-	Összefoglalva nagy hangsúlyt kell a memóriaszervezésre fordítani, hogy a
-	processzormag megfelelően legyenek az adatokkal táplálva.
+	Összefoglalva: nagy hangsúlyt kell a memóriaszervezésre fordítani, hogy a
+	processzormagok megfelelően legyenek az adatokkal táplálva.
 	\end{center}
 
 
@@ -157,8 +159,8 @@
 	\begin{itemize}
 		\item A laptopomban található \textbf{Intel Core i5 M520} processzor,
 		\item A laptopomban található kis teljesítményű \textbf{nVidia GT330M} videókártya,
-		\item Asztali PC-ben található \textbf{Intel Xeon CPU},
-		\item Asztali PC-ben található \textbf{Intel Xeon Phi} co-processzor \cite{phi,mic}. 
+% 		\item Asztali PC-ben található \textbf{Intel Xeon CPU},
+% 		\item Asztali PC-ben található \textbf{Intel Xeon Phi} co-processzor \cite{phi,mic}. 
 	\end{itemize}
 	Ezen eszközök legjelentősebb paraméterei a \ref{table:envs} táblázat tartalmazza.
 	
@@ -173,43 +175,29 @@
 	\footnotesize
 	% Some packages, such as MDW tools, offer better commands for making tables
 	% than the plain LaTeX2e tabular which is used here.
-	\begin{tabular}{ l | r | r | r | r}
-		 & Intel Core i5 & nVidia GT330M & Intel Xeon & Xeon PHI \\ \hline
-		MAX COMPUTE UNITS & $4$ & $6$ & $8$ & $224$\\
-		MAX CLOCK FREQUENCY & 2400 & 1265 & 3000 & 1100\\
-		MAX WORK GROUP\_SIZE & $8192$ & $512$ & $8192$ & $8192$ \\ \hline\hline
-		GLOBAL MEM SIZE & $\sim 4Gbyte$ & $1Gbyte$ & $8Gbyte$ & $\sim 4.5Gbyte$\\
+% 	\begin{tabular}{ l | r | r | r | r}
+% 		 & Intel Core i5 & nVidia GT330M & Intel Xeon & Xeon PHI \\ \hline
+% 		MAX COMPUTE UNITS & $4$ & $6$ & $8$ & $224$\\
+% 		MAX CLOCK FREQUENCY & 2400 & 1265 & 3000 & 1100\\
+% 		MAX WORK GROUP\_SIZE & $8192$ & $512$ & $8192$ & $8192$ \\ \hline\hline
+% 		GLOBAL MEM SIZE & $\sim 4Gbyte$ & $1Gbyte$ & $8Gbyte$ & $\sim 4.5Gbyte$\\
+% 		%MAX\_CONSTANT\_BUFFER\_SIZE & $131072$ & $65536$ & $131072$ & $131072$\\
+% 		LOCAL MEM SIZE & $32 Kbyte$ & $16 Kbyte$ & $32 Kbyte$ & $32 Kbyte$\\
+% 	\end{tabular}
+	
+	\begin{tabular}{ l | r | r}
+		 & Intel Core i5 & nVidia GT330M \\ \hline
+		MAX COMPUTE UNITS & $4$ & $6$\\
+		MAX CLOCK FREQUENCY & 2400 & 1265 \\
+		MAX WORK GROUP\_SIZE & $8192$ & $512$ \\ \hline\hline
+		GLOBAL MEM SIZE & $\sim 4Gbyte$ & $1Gbyte$\\
 		%MAX\_CONSTANT\_BUFFER\_SIZE & $131072$ & $65536$ & $131072$ & $131072$\\
-		LOCAL MEM SIZE & $32 Kbyte$ & $16 Kbyte$ & $32 Kbyte$ & $32 Kbyte$\\
+		LOCAL MEM SIZE & $32 Kbyte$ & $16 Kbyte$\\
 	\end{tabular}
 	\end{table}
 	
 	Az összehasonlíthatóság végett a legkissebb memóriájú eszközre fogom a problémát skálázni, ami a
-	GT330M videókártya. A többi eszköz memóriája jóval nagyobb, így a kód könnyen portolható rájuk.
-
-\section{Implementációhoz szükséges megfontolások}
-
-	A korábban említettek végett (\ref{table:mem}. táblázat)
-	az allokáció csak a ``host'' programban történhet.
-
-\section{Memória szervezés}
-\subsection{Csak globális memória használata}
-	Az algoritmus pszeudó kódjának direkt leképezése esetén a ``host''-on
-	allokálunk memóriát a ``device'' globális memóriájában.
-	Majd a megfelelő adatokat ide másoljuk és a kernel is itt ír és olvas.
-	
-\subsection{Globális memória és adott esetben lokális memória használata}
-	
-\subsection{Globális memória és minden adódó alkalomkor a lokális memória használata}
-	
-	
-	\noindent
-	\begin{center}
-	Összegezve elmondható, hogy az aktuálisan használt adat tárolását a lehető
-	legközelebb kell tartani a processzor-maghoz.
-	\end{center}
-
-
+	GT330M videókártya. A többi eszköz memóriája jóval nagyobb, így a kód mindegyiken tud futni.
 
 
 

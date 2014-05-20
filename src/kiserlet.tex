@@ -20,7 +20,7 @@
 	A különféle erők nagysága a porrészecskék nagyságától különféleképpen skálázódik. Elhanyagolásokat
 	ennek megfelelően tehetünk.
 	\begin{description}
-		\item[Gravitációs $F_g$ erő:] Mikrógravitációban végzett kísérletek kivételével a porrészecskére
+		\item[Gravitációs $F_g$ erő:] Mikrogravitációban végzett kísérletek kivételével a porrészecskére
 			ható gravitációs erő lineárisan arányos a tömegével. Nanométer nagyságú részecskék esetén
 			elhanyagolható, de a jelen esetben használt mikrométer nagyságú részecskék esetén dominánsak,
 		\item[Villamos tér keltette $F_e$ erő:] A porrészecske töltésével és a villamos tér nagyságával
@@ -29,12 +29,12 @@
 			szóródásának makroszkópikus erőként való számításba vétele,
 		\item[Hőmérséklet grandiensi $F_{th}$ erő:] A gáz hőmérsékletének gradiense okozta
 			gázatomok diffúzív jellegű mozgása által okozott indirekt erőhatás,
-		\item[Ion sudrási $F_i$ erő:] Az ionokra ható villamos tér okozta erőnek indirekt hatása a
+		\item[Ion sodrási $F_i$ erő:] Az ionokra ható villamos tér okozta erőnek indirekt hatása a
 			porrészecskékre.
 	\end{description}
-	A poros plazma analízise során fontos szerepet játszik a részecskék csatolása.
+	A poros plazma analízise során fontos szerepet játszik a porrészecskék csatolása.
 	A csatolást gyengének és erősnek kategorizáljuk aszerint, hogy a részecskék szomszédja általi
-	átlagos potenciális energia az átlagos termikus energiához képest kissebb vagy nagyobb.
+	átlagos potenciális energia az átlagos termikus (kinetikus) energiához képest kissebb vagy nagyobb.
 	A csatolást a Coulomb csatolási paraméterrel ($\Gamma$) lehet számosítani, ami a szomszédos
 	részecskék Coulomb potenciáljának és termikus energiájának hatványa:
 	\begin{equation}
@@ -42,10 +42,11 @@
 	\end{equation}
 	ahol $Q$ a részecskék töltése, $d$ az átlagos részecske távolság és a $T_d$ a por hőmérséklete.
 	Ha a $\Gamma$ értéke egy kritikus érték fölé $\Gamma > 150$ növekszik, akkor
-	porrészecskék Coulomb kristályszerkezetbe rendeződik.
+	Ikawa jóslata szerint a porrészecskék Coulomb kristályszerkezetbe rendeződik.
 	
 	Az iparban anyag porlasztására és mintázat maratására használják. Továbbá szennyeződésként a VLSI
-	áramkörök gyártásakor jelentkezik, ami kihozatal csökkenését és a teljesítmény csökkenéséhez vezet.
+	áramkörök gyártásakor jelentkezik, ami a kihozatal csökkenését és a teljesítmény csökkenéséhez
+	vezet.
 
 %----------------------------------------------------------------------------
 \section{A kísérlet}
@@ -55,57 +56,92 @@
 	A kamrának hermetikusan jól zártnak kell lennie, hogy csak a kívánt gázt tartalmazza.
 	A középvákuumú működéshez kétlépéses vákuumszivattyút kell alkalmazni.
 	
-	\begin{figure}[!h]
-		\centering
-		\includegraphics[width=0.9\columnwidth]{figures/eps/dust_camera.eps}
-		\caption{A mérési elrendezés sematikus ábrája (forrás: \cite{Merlino2006})} 
-		\label{fig:meresch} 
-	\end{figure}
+	
 	
 	A kamra sematikus ábrája a \ref{fig:meresch}. ábrán látható.
-	A porrészecskék levitációjáért a villamos tér felelős. Az 1D síkba való zárás parabolikus
-	potenciállal lehetséges. Az ilyen tér létrehozása a következő elektródákkal lehetséges: alul
-	elhelyezett korong alakú elektróda, ami felett egy gyűrű alakú elektróda helyezkedik el.
+	A porrészecskék levitációjáért a villamos tér felelős. A síkba való zárás parabolikus
+	potenciállal lehetséges. Az ilyen tér létrehozása a következő elektróda elrendezéssel lehetséges:
+	alul elhelyezett korong alakú elektróda, ami felett egy gyűrű alakú elektróda helyezkedik el.
 	Az ilyen elektródarendszerre kapcsolt váltakozó feszültség a beszórt porrészecskéket lebegtetni
 	tudja. Továbbá a részecskék követéséhez lézerrel megvilágítjuk és nagysebességű kamerával
 	felvételt készítünk róla.
 	
-	A konkrét kamra paraméterei:
-	\begin{itemize}
-		\item Kamra belső átmérője $25cm$
-		\item Kamra belső magassága $18cm$
-		\item Alsó elektróda átmérője $18cm$
-		\item Felső gyűrű elektróda belső átmérője $15cm$
-		\item Felső elektróda távolsága az alsótól $13cm$
-		\item Argon gáz nyomása $1.2\pm0.05 Pa$
-		\item Gáz átfolyása $\sim 0.01 CCPM$
-		\item Váltakozó feszültség $7W\quad @ \quad 13.56 MHz$
-		\item Porrészecske: melamine-formaldehyde
-		\item Porrészecske átmérője $4.38\pm 0.06 \mu m$
-		\item Porrészecske tömege $6.64\cdot10^{-14} kg$
-		\item Látható porrészecskék száma $\sim 2500$
-		\item Megvilágító lézer: $200mW\quad @ \quad 532nm$
-		\item Kamera $1.4MPixel$
-	\end{itemize}
-	Ilyen felvétel látható a \ref{fig:measurement}. ábrán. 	
-	
-	\begin{figure}[!h]
+	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.9\columnwidth]{figures/eps/coulomb_crystal.eps}
-		\caption{2D-s Coulomb kristály képe} 
-		\label{fig:measurement} 
+		\includegraphics[width=0.9\columnwidth]{figures/eps/dust_camera.eps}
+		\caption{A mérési elrendezés sematikus ábrája (forrás: \cite{Merlino2006})} 
+		\label{fig:meresch}
 	\end{figure}
-
+	
+	A kamrát (\ref{fig:kamra}. ábra) Hartmann Péter külső konzulensem építette és a MTA Wigner FK SZFI
+	Gázkisülési Laboratóriumában található.
+	
+	\noindent A paraméterei:
+	\begin{myitemize*}
+		\item Kamra belső átmérője: $25cm$
+		\item Kamra belső magassága: $18cm$
+		\item Alsó elektróda átmérője: $18cm$
+		\item Felső gyűrű elektróda belső átmérője: $15cm$
+		\item Felső elektróda távolsága az alsótól: $13cm$
+		\item Argon gáz nyomása: $1.2\pm0.05 Pa$
+		\item Gáz átfolyása: $\sim 0.01 CCPM$
+		\item RF gerjesztés: $7W\ @ \ 13.56 MHz$
+		\item Porrészecske: melamine-formaldehyde
+		\item Porrészecske átmérője: $4.38\pm 0.06 \mu m$
+		\item Porrészecske tömege. $6.64\cdot10^{-14} kg$
+		\item Látható porrészecskék száma: $\sim 2500$
+		\item Megvilágító lézer: $200mW\quad @ \quad 532nm$
+		\item Kamera: $1.4MPixel\ @\ 100 FPS$
+	\end{myitemize*}
+	A kamra alsó elektródáját lehetséges egy motorral forgásba hozni. Ezáltal a kamrában lévő gáz is
+	forgásba jön, ami a porrészecskékre az $F_i$ ionsodrási erővel hatva nagy mágneses tér Lorentz
+	erejének feleltethető meg.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.9\columnwidth]{figures/eps/dusty2.eps}
+		\caption{A konkrét kamra működése közben} 
+		\label{fig:kamra}
+	\end{figure}
+	
 %----------------------------------------------------------------------------
 \section{A mérendő mennyiségek és a származtatott értékek}
 %----------------------------------------------------------------------------
+	A kísérlet előkészítése a következő lépésekből áll:
+	\begin{enumerate*}
+		\item Elővákum szivattyú bekapcsolása,
+		\item Középvákuum szivattyú bekapcsolása,
+		\item Argon palack megnyitása a megfelelő áramlás szintjére,
+		\item RF gerjesztés bekapcsolása,
+		\item Megvilágító lézer bekapcsolása,
+		\item \label{it:por} Porrészecskék beszórása,
+		\item Kamera bekapcsolása és a megjelenítő szoftver futtatása,
+		\item Ha sok összetapadt porrészecske látható, illetve ha túl sok porrészecske látható, akkor
+		az RF gerjesztés gyors ki-be kapcsolása után a \ref{it:por}.-től való folytatása a folyamatnak.
+	\end{enumerate*}
+	A \ref{fig:captures}. ábrán látható álló és forgó alsó elektródájú kísérlet során a
+	porrészecskékről készült kép.
 	
-
-
-
-
-
-
+	\begin{figure}[H]
+		\centering
+		\subfloat[Álló elektróda esetén sok $\left(\sim 1500\right)$ részecske]{
+			\includegraphics[width=0.95\columnwidth]{figures/eps/000047659380.eps}%
+			\label{fig:allo}
+		}
+		\\
+		\subfloat[Forgó elektróda esetén kevés $\left(\sim 100\right)$ részecske]{
+			\includegraphics[width=0.95\columnwidth]{figures/eps/000000606627.eps}%
+			\label{fig:forgo}
+		}
+		\caption{Két különböző kísérlet során készült fénykép.}
+		\label{fig:captures}
+	\end{figure}
+	
+	A fényképek alapján a részecskék pozíciójára és időbeli eloszlására vagyunk kíváncsiak.
+	A kamera objektíve által leképezett kép a függőleges irányú pozíciót nem tartalmazza. Mivel jelen
+	kísérletek során az ezirányú mozgása a részecskéknek nem számottevő, így az $x-y$ pozícióját jól
+	lehet számítani a kép alapján. Nagy pontosság esetén szükséges a képek előzetes feldolgozása a
+	perspektivikus torzítás kiküszöbölése végett. Természetesen ez lehetséges a pozíciók számítása után
+	is, aminek a számításigénye kissebb is.
 
 
 

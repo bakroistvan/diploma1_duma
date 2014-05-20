@@ -28,6 +28,8 @@
 
 \usepackage{array}
 
+\usepackage{mdwlist}
+\makecompactlist{myitemize*}{itemize}
 
 %--------------------------------------------------------------------------------------
 % Main variables
@@ -112,6 +114,7 @@
 
 
 \newcommand{\ud}{\ \mathrm{d}}
+\newcommand{\mhat}[1]{\mathrm{\hat{#1}}}
 \renewcommand{\vec}[1]{\overrightarrow{\mathrm{#1}}}
 
 \DeclareMathOperator*{\argmax}{arg\,max}
@@ -142,16 +145,31 @@ aboveskip=10pt}
 \singlespacing
 %\include{guideline}
 
-\pagenumbering{arabic}
+
+%\pagenumbering{arabic}
+%\pagenumbering{roman}
 \onehalfspacing
+\setcounter{page}{999}
 \include{titlepage}
-\tableofcontents\vfill
+\clearpage
+
+\pagenumbering{roman}
+\setcounter{page}{1}
+\pdfbookmark{\contentsname}{toc}
+\tableofcontents%\addcontentsline{toc}{chapter}{Tartalomjegyzék}
+\clearpage
 %\include{declaration}
+
 \include{project}
-\include{abstract}
-%\include{introduction}
+\clearpage
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+% \include{abstract}
+% \include{introduction}
 \include{kiserlet}
-\include{referencia}
+\include{detektalas}
 \include{opencl}
 \include{ide}
 \include{multip}
@@ -159,8 +177,12 @@ aboveskip=10pt}
 %\include{chapter6}
 %\include{chapter7}
 \include{aftermatch}
-%\include{acknowledgement}
-\include{fuggelek}
+
+
+\pagenumbering{Roman}
+\setcounter{page}{1}
+% \include{acknowledgement}
+% \include{fuggelek}
  
 
 \listoffigures\addcontentsline{toc}{chapter}{Ábrák jegyzéke}

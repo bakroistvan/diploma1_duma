@@ -2,28 +2,33 @@
 \chapter{Összehasonlítás}
 %----------------------------------------------------------------------------
 
-	\begin{table}[ht]
-		\footnotesize
-		\centering
-		\caption{Az órajel-generátor chip órajel-kimenetei.} \label{tab:SysClocks}
-		\begin{tabular}{ | l | c | c |}
-		\hline
-		Órajel & Frekvencia & Cél pin \\ \hline
-		CLKA & 100 MHz & FPGA CLK0\\
-		CLKB & 48 MHz  & FPGA CLK1\\
-		CLKC & 20 MHz  & Processzor\\
-		CLKD & 25 MHz  & Ethernet chip \\
-		CLKE & 72 MHz  & FPGA CLK2\\
-		XBUF & 20 MHz  & FPGA CLK3\\
-		\hline
-		\end{tabular}
-		\label{tab:TabularExample}
+	\begin{table}[!ht]
+	\footnotesize
+	\centering
+	\caption[Eszközök futási idejének összehasonlítása]{Az eszközök erőforrásainak és a rajta futtatott
+	programok futási idejének összehasonlítása.}
+	\label{table:results}
+	\setlength{\extrarowheight}{8pt}
+% 		\begin{tabular}{ l | r | r | r | r}
+% 		 & Intel Core i5 & nVidia GT330M & Intel Xeon & Xeon PHI \\ \hline
+% 		MAX COMPUTE UNITS & $4$ & $6$ & $8$ & $224$\\
+% 		MAX CLOCK FREQUENCY & 2400 & 1265 & 3000 & 1100\\
+% 		MAX WORK GROUP\_SIZE & $8192$ & $512$ & $8192$ & $8192$ \\ \hline\hline
+% 		GLOBAL MEM SIZE & $\sim 4Gbyte$ & $1Gbyte$ & $8Gbyte$ & $\sim 4.5Gbyte$\\
+% 		LOCAL MEM SIZE & $32 Kbyte$ & $16 Kbyte$ & $32 Kbyte$ & $32 Kbyte$\\ \hline\hline
+% 		Futási idő &
+% 		\end{tabular}
+	\begin{tabular}{ l | r | r}
+		 & Intel Core i5 & nVidia GT330M \\ \hline
+		MAX COMPUTE UNITS & $4$ & $6$\\
+		MAX CLOCK FREQUENCY & 2400 & 1265 \\
+		MAX WORK GROUP\_SIZE & $8192$ & $512$ \\ \hline\hline
+		GLOBAL MEM SIZE & $\sim 4Gbyte$ & $1Gbyte$\\
+		%MAX\_CONSTANT\_BUFFER\_SIZE & $131072$ & $65536$ & $131072$ & $131072$\\
+		LOCAL MEM SIZE & $32 Kbyte$ & $16 Kbyte$\\ \hline\hline
+		Futási idő & 1 & 2
+	\end{tabular}
 	\end{table}
-
-
-
-
-
 
 
 
