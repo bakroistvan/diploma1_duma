@@ -31,8 +31,8 @@
 	Mivel a részecskék mérete a képen véges és kis szórású, így a korábban
 	említett FIR Gauss szűrő jól tudja a részecskéket eliminálni.
 	Viszont a mérési képek $100\ \mathrm{FPS}$ sebességgel és $1024\times1024$ mérettel érkeznek be.
-	Ez $100\ \mathrm{MByte/s}$ adatfolyamot jelent. Ahhoz, hogy ezt közel online feltudjuk dolgozni a
-	Gauss szűrés nem járható út. Hatékonyabb szűrőre van szükségünk! A megoldást a medián szűrőben látom,
+	Ez $100\ \mathrm{MByte/s}$ adatfolyamot jelent. Ahhoz, hogy ezt közel real-time feltudjuk dolgozni
+	a Gauss szűrés nem járható út. Hatékonyabb szűrőre van szükségünk! A megoldást a medián szűrőben látom,
 	ami egy nemlineáris, de véges ``impulzusválaszú'' szűrő.
 	A szűrő az adott pixel környezetének mediánjának számítását jelenti.
 	A nemlinearitás jelen esetben nem okoz gondot, mivel csak detektálásra használjuk (a pozíció
@@ -52,19 +52,20 @@
 	míg a világosabb területeknél nem.
 	Ezt a döntési küszöb értékének adaptációját jelenti a háttér világosságához.
 	Az adaptív küszöböt a következő kifejezéssel határoztam meg:
-	\begin{align} 
+	\begin{multline}
 		\label{eq:treshold}
-		K = \mathrm{Mean}\{\partial P\} + \delta \cdot \mathrm{STD}\{\partial P\} \cdot 
+		K = \mathrm{Mean}\{P-\mhat{M}P\}+\\
+		  + \delta \cdot \mathrm{STD}\{P - \mhat{M}P\} \cdot 
 		\left[ 1+ a \left(
 			\frac{\mhat{M}P}{\max\left\{\mhat{M}P\right\} - \min\left\{\mhat{M}P\right\}}
 			\right)^b
 		\right]
-	\end{align} 
-	ahol $P$ az eredeti kép, $\partial P$ a differenciális kép, $Mean\{\},\ STD\{\}$ az átlag és a
-	szórás számításának függvénye, $\mhat{M}$ a medián szűrés operátora és $a,b$ két
-	alakparaméter.\footnote{Az adaptív dontést a mérési kép előzetes feldolgozásával is elérhettük
-	volna, ha a Photoshop-ból ismert Curves tool-al módosítottunk volna rajta.
-	A tool a képet egy nemlineáris fügvényen keresztül engedi át.}
+	\end{multline}
+	ahol $P$ az eredeti kép, $\mhat{M} P$ a medián szűrt kép, $\mathrm{Mean}\{\},\ \mathrm{STD}\{\}$ az
+	átlag és a szórás számításának függvénye és a $a,b$ két alakparaméter.
+	\footnote{Az adaptív dontést a mérési kép előzetes feldolgozásával is elérhettük volna,
+	ha a Photoshop-ból ismert Curves tool-al módosítottunk volna rajta. A tool a képet egy nemlineáris
+	fügvényen keresztül engedi át.}
 	
 	A \ref{fig:alg}. ábrán látható a detektálási algoritmus működése közben.
 	A \ref{fig:alg1}. ábrán a mérési kép ($P$) látható kitöltött görbével, ami az \ref{fig:allo}. ábrán
