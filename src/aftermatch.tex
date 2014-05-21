@@ -2,4 +2,30 @@
 \chapter{Összegzés}
 %----------------------------------------------------------------------------
 
-	Dolgozatomban \dots
+	Dolgozatomban bemutattam a porosplazma kísérletek apparátusát. A kísérlet során a kristályrácsba
+	rendeződő részecskékről egy nagysebességű kamerával fényképek készülnek. A dolgozatomban ezen
+	képeket, kellett feldolgoznom és a részecskék pozícióját detektálnom.
+	A pozíciók a fizikai modell/szimuláció validálására szolgálnak.
+	
+	Ismertettem a részecske detektálásának módszerét szűrés és adaptív döntési küszöb használatával.
+	Az elterjedt FIR Gauss szűrő helyett a hatékonyabb medián szűrőt javasoltam és alkalmaztam. A
+	pozíció számítására a momentum módszert implementáltam, ami nagyobb számítási energiát igényel, de
+	szubpixeles felbontást tudtam vele elérni. Konstatáltam, hogy az így kialakult program masszívan párhuzamosítható.
+	
+	Ezután áttekintettem az OpenCL keretrendszert, amit a párhuzamos program megírásának segítségére
+	használtam. Az itt ismertetett megállapításokat figyelembe véve állítottam össze a párhuzamos
+	program lépéseit, amit részleteztem is.
+	
+	Végül az elkészült programot CPU-n és GPU-n is futtatva a futási idejüket összevetettem és
+	azonosítottam a gyorsulás forrását kitérve a processzormagra és a memóriájára.
+	
+	\section*{További feladatok:}
+	\begin{itemize}
+		\item A host-program real-time mérésbe helyezése egy producer-consumer sémájú szál megoldás
+		alkalmazásával,
+		\item Az eredmény grafikus  megjelenítése pl.: OpenGL használtatával,
+		\item Az OpenCL szabvány által specifikált vektor műveletek támogatásának kiaknázása, ami az Intel
+		Xeon PHI processzorkártyában rejlő teljesítményt ki tudná aknázni.
+	\end{itemize}
+	
+	
