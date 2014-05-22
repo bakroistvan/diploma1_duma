@@ -7,14 +7,14 @@
 	A program ciklikusan a következő lépéseket hajtja végre:
 	\begin{enumerate*}
 		\item Képek beolvasása a host-memóriába,
-		\item Képek leküldése a host-memóriájábó az eszköz globális memóriájába,
+		\item Képek leküldése a host-memóriájából az eszköz globális memóriájába,
 		\item Eszközön futtatandó kernel inicializálása, argumentumainak beállítása,
 		\item Kernel futtatása az eszközön,
 		\item Kernel futása után az eredmény az eszköz globális memóriájából a host-memóriájába való
 		visszatöltése,
 		\item Posztprocesszálás,
 	\end{enumerate*}
-	A kernel megírása során a korábbi \ref{sec:opencl}. részben említetteket figyelembe kell venni.
+	A kernel megírása során a korábbi \ref{sec:opencl}. fejezetben említetteket figyelembe kell venni.
 	Főként a véges lokális és globális memóriát. A kernel adat-parallel módon lett megírva.
 	A lokális memória $16 \mathrm{KByte}$ méretű, amit két $8 \mathrm{KByte}$ nagyságú $A$ és $B$
 	bufferre osztottam fel.

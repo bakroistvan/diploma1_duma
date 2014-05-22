@@ -16,12 +16,12 @@
 	A korábban említett egyszerű küszöb módszer itt nem alkalmazható, mivel a világos és sötét
 	területek más és más küszöbértéket kívánnának meg.
 	A megoldása erre, mint megannyi villamosmérnöki mérési feladatra, hogy a jel helyett a
-	differenciális jelet mérjük. Jelen esetben ez azt jelenti, hogy először előállítjuk a részecske
-	nélküli háttérképét, majd a méréssel kapott képből kivonva ezt a differenciális képet megkapjuk.
+	differenciális jelet mérjük/számítjuk. Jelen esetben ez azt jelenti, hogy először előállítjuk a
+	részecske nélküli háttérképét, majd a méréssel kapott képből kivonva ezt a differenciális képet megkapjuk.
 	A differenciális képen a részecskéket a korábban említett küszöb módszerrel lehet detektálni a
 	részecskéket.
 	
-	Ehhez csupán a mérési képből kell szűréssel származtatni a háttérképet.
+	Ehhez csupán a mérési képből kell szűréssel származtatni a háttérképet (eliminálni a részecskéket).
 	A \cite{Feng2007,Oxtoby2010} cikkekben és általában erre véges Gauss szűrőt használnak, ami egy
 	lineáris véges impulzusválaszú (FIR) aluláteresztő szűrő.
 	A szűrés egy adott pixel környezetének súlyozott átlagolását jelenti.
@@ -42,14 +42,14 @@
 	a medián szűrő $n\times n$ ablak esetén: bubborék rendezés során $O(n^2)$, javított bubborék
 	rendezés során $O(n^2 / 2)$ illetve quicksort esetén $O(n\log n)$ összehasonlítást és
 	cserét. Az összehasonlítás és a csere nagyságrendekkel gyorsabban végrehajtható, mint a szorzás és
-	össeadás.
+	összeadás.
 	
 \subsection{Adaptív küszöb módszer szűréssel}
 	Látható a \ref{fig:allo}. ábrán, hogy a sötétebb háttér kiterjedése nagyobb, ennek megfelelően az
 	automata kamera ezekre a területekre állítja be az expozíciót.
 	Így a sötét területek részletesebbek, míg a világos területek részletszegények (túlexponáltak) lesznek.
-	Számunkra ez azt jelenti, hogy a sötétebb területeken jobban megbízhatunk a részecskék képében,
-	míg a világosabb területeknél nem.
+	Számunkra ez azt jelenti, hogy a sötétebb területeken jobban megbízhatunk a részecskék kiugró
+	értékében, míg a világosabb területeknél nem.
 	Ezt a döntési küszöb értékének adaptációját jelenti a háttér világosságához.
 	Az adaptív küszöböt a következő kifejezéssel határoztam meg:
 	\begin{multline}
@@ -63,7 +63,7 @@
 	\end{multline}
 	ahol $P$ az eredeti kép, $\mhat{M} P$ a medián szűrt kép, $\mathrm{Mean}\{\},\ \mathrm{STD}\{\}$ az
 	átlag és a szórás számításának függvénye és a $a,b$ két alakparaméter.
-	\footnote{Az adaptív dontést a mérési kép előzetes feldolgozásával is elérhettük volna,
+	\footnote{Az adaptív döntést a mérési kép előzetes feldolgozásával is elérhettük volna,
 	ha a Photoshop-ból ismert Curves tool-al módosítottunk volna rajta. A tool a képet egy nemlineáris
 	fügvényen keresztül engedi át.}
 	
@@ -73,7 +73,7 @@
 	Piros görbével látható a medián szűrt jelet ($\mhat{M}P$), amin jól érzékelhető a hirtelen
 	változások eliminációja.
 	A következő \ref{fig:alg2}. ábrán az eredeti és a szűrt különbsége azaz a differenciális kép
-	($\partial P$) látható a kék görbével. A zöld görbe a \eqref{treshold} szerinti
+	($P - \mhat{M}P$) látható a kék görbével. A zöld görbe a \eqref{treshold} szerinti
 	döntési köszöb.
 	Az utolsó \ref{fig:alg3}. ábrán a detektált részecskék figyelhetőek meg.
 	
